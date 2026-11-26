@@ -2,7 +2,7 @@
   {
     "context": "Tâche 1 (Les projets d’avenir)",
     "title": "Projets d'avenir & Installation au Canada",
-    "audio": "/audio/Les-projets-davenir.m4a",
+    "audio": "audio/Les-projets-davenir.m4a",
     "qa": [
       {
         "questions": [
