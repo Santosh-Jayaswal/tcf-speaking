@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TCF Speaking</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -56,9 +56,20 @@
         <div class="card-header">
           <span class="badge">Speaking Q&A</span>
           <div class="card-header-actions">
+            <button class="volume-btn" id="volume-btn" onclick="toggleAudioBar()" aria-label="Audio player" title="Listen to audio" style="display: none;">🔊</button>
             <button class="flip-trigger" onclick="flipCard()">Flip to Vocab ↻</button>
           </div>
         </div>
+
+        <!-- Compact Mini Audio Bar (Hidden until volume icon clicked) -->
+        <div class="mini-audio-bar" id="mini-audio-bar">
+          <button class="audio-ctrl-btn" id="audio-play-btn" onclick="togglePlayPause()" aria-label="Play or Pause">▶</button>
+          <span class="audio-time" id="audio-time">0:00</span>
+          <input type="range" class="audio-progress" id="audio-progress" value="0" min="0" max="100" step="0.1" oninput="seekAudio(this.value)">
+          <button class="audio-ctrl-btn loop-btn" id="audio-loop-btn" onclick="toggleLoop()" aria-label="Loop audio" title="Loop">🔁</button>
+          <audio id="card-audio" preload="metadata"></audio>
+        </div>
+
         <div class="card-body" id="front-body">
           Loading speaking topics...
         </div>
@@ -111,6 +122,94 @@
       document.getElementById('nav-overlay').classList.toggle('open');
     }
 
+    /* --- Compact Audio Player Logic --- */
+    const audioEl = document.getElementById('card-audio');
+    const volumeBtn = document.getElementById('volume-btn');
+    const miniAudioBar = document.getElementById('mini-audio-bar');
+    const audioPlayBtn = document.getElementById('audio-play-btn');
+    const audioProgress = document.getElementById('audio-progress');
+    const audioTime = document.getElementById('audio-time');
+    const audioLoopBtn = document.getElementById('audio-loop-btn');
+
+    function formatTime(sec) {
+      if (!isFinite(sec) || sec < 0) return '0:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${s < 10 ? '0' : ''}${s}`;
+    }
+
+    function toggleAudioBar() {
+      const isOpen = miniAudioBar.classList.toggle('open');
+      volumeBtn.classList.toggle('active', isOpen);
+      if (isOpen && audioEl.paused && audioEl.src) {
+        audioEl.play().catch(() => {});
+      }
+    }
+
+    function togglePlayPause() {
+      if (!audioEl.src) return;
+      if (audioEl.paused) {
+        audioEl.play().catch(() => {});
+      } else {
+        audioEl.pause();
+      }
+    }
+
+    function toggleLoop() {
+      audioEl.loop = !audioEl.loop;
+      audioLoopBtn.classList.toggle('active', audioEl.loop);
+    }
+
+    function seekAudio(val) {
+      if (isFinite(audioEl.duration) && audioEl.duration > 0) {
+        audioEl.currentTime = (val / 100) * audioEl.duration;
+      }
+    }
+
+    function resetAudioPlayer(src) {
+      audioEl.pause();
+      audioEl.currentTime = 0;
+      audioPlayBtn.textContent = '▶';
+      audioProgress.value = 0;
+      audioProgress.style.setProperty('--progress', '0%');
+      audioTime.textContent = '0:00';
+      miniAudioBar.classList.remove('open');
+      volumeBtn.classList.remove('active');
+
+      if (src) {
+        audioEl.src = src;
+        volumeBtn.style.display = 'inline-flex';
+      } else {
+        audioEl.removeAttribute('src');
+        volumeBtn.style.display = 'none';
+      }
+    }
+
+    audioEl.addEventListener('play', () => {
+      audioPlayBtn.textContent = '⏸';
+    });
+
+    audioEl.addEventListener('pause', () => {
+      audioPlayBtn.textContent = '▶';
+    });
+
+    audioEl.addEventListener('ended', () => {
+      if (!audioEl.loop) {
+        audioPlayBtn.textContent = '▶';
+        audioProgress.value = 0;
+        audioProgress.style.setProperty('--progress', '0%');
+      }
+    });
+
+    audioEl.addEventListener('timeupdate', () => {
+      if (isFinite(audioEl.duration) && audioEl.duration > 0) {
+        const pct = (audioEl.currentTime / audioEl.duration) * 100;
+        audioProgress.value = pct;
+        audioProgress.style.setProperty('--progress', `${pct}%`);
+        audioTime.textContent = formatTime(audioEl.currentTime);
+      }
+    });
+
     /* --- Flashcards Logic --- */
     let flashcards = [];
     let currentIndex = 0;
@@ -149,6 +248,9 @@
 
       setTimeout(() => {
         const item = flashcards[currentIndex];
+
+        // Configure audio for this card
+        resetAudioPlayer(item.audio || '');
 
         let frontHTML = '';
         if (item.context) frontHTML += `<div class="passage-context">${item.context}</div>`;
@@ -258,6 +360,7 @@
 
     function flipCard() {
       closeTopicPopover();
+      if (!audioEl.paused) audioEl.pause();
       cardElement.classList.toggle('is-flipped');
     }
 
