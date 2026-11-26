@@ -1,1 +1,191 @@
-
+[
+  {
+    "context": "TCF Speaking – Tâche 1 (Entretien dirigé)",
+    "title": "Projets d'avenir & Installation au Canada",
+    "qa": [
+      {
+        "questions": [
+          "Quels sont vos projets pour l'avenir ?",
+          "Vous avez des projets pour l'année prochaine ?",
+          "Quels sont vos projets d'avenir au Canada ?"
+        ],
+        "answer": "L’année prochaine, je souhaite évoluer dans mon travail en prenant plus de responsabilités dans le domaine de la vente et du service client. J’aimerais aussi continuer à améliorer mon français pour mieux communiquer avec les gens."
+      },
+      {
+        "questions": [
+          "Vous pensez rester ici longtemps ?",
+          "Vous voulez rester longtemps dans cette ville ?",
+          "Vous voulez continuer à vivre au Canada ?",
+          "Combien de temps comptez-vous rester au Canada ?"
+        ],
+        "answer": "Oui, j’aime beaucoup vivre ici, donc je compte rester au moins quelques années pour continuer à évoluer dans mon travail et profiter de la qualité de vie."
+      },
+      {
+        "questions": [
+          "Où aimeriez-vous vivre à l'avenir ?",
+          "Vous aimeriez vivre dans une autre ville canadienne ?",
+          "Plus tard, où voulez-vous habiter ?"
+        ],
+        "answer": "J’aime beaucoup ma ville actuelle, mais à l’avenir, j’aimerais bien découvrir une autre ville canadienne comme Québec ou Toronto pour avoir plus d’opportunités professionnelles."
+      },
+      {
+        "questions": [
+          "Pourquoi aimeriez-vous vivre dans cette ville ou ce pays ?"
+        ],
+        "answer": "J’aimerais découvrir une ville comme Québec parce que c’est une très belle ville et que cela me permettrait de pratiquer mon français tous les jours."
+      },
+      {
+        "questions": [
+          "Qu'aimeriez-vous faire professionnellement à l'avenir ?",
+          "Vous aimeriez travailler comme [métier] au Canada ?",
+          "À propos de votre parcours professionnel, qu'est-ce que vous voulez faire ?"
+        ],
+        "answer": "À l’avenir, j’aimerais évoluer vers un poste de responsable d’équipe dans le domaine de la vente et du service client, parce que j’aime beaucoup le contact avec les gens."
+      },
+      {
+        "questions": [
+          "Pourquoi avez-vous choisi ce projet ?",
+          "Pourquoi voulez-vous vous installer définitivement au Canada ?"
+        ],
+        "answer": "J’ai choisi ce projet parce que j’aime beaucoup mon domaine et que la qualité de vie ici me permet de trouver un bon équilibre entre mon travail et ma vie personnelle."
+      },
+      {
+        "questions": [
+          "Comment imaginez-vous votre vie dans quelques années ?",
+          "Comment imaginez-vous votre vie dans cinq ans ?"
+        ],
+        "answer": "Dans cinq ans, je m’imagine avec un poste à responsabilités dans mon domaine, parlant couramment français et profitant d’une vie stable et équilibrée ici au Canada."
+      },
+      {
+        "questions": [
+          "Pourquoi voulez-vous rester ici ?",
+          "Parce que la vie ici est plus calme."
+        ],
+        "answer": "Je veux rester ici parce que la vie est calme, l’environnement est agréable et je me sens très bien dans cette ville."
+      },
+      {
+        "questions": [
+          "Pensez-vous rentrer dans votre pays un jour ?",
+          "Pensez-vous habiter dans un autre pays ?"
+        ],
+        "answer": "Pour l’instant, je souhaite rester ici pour continuer ma carrière, mais je retournerai certainement dans mon pays de temps en temps pour rendre visite à ma famille."
+      },
+      {
+        "questions": [
+          "Votre femme ou votre mari a le même projet que vous ?"
+        ],
+        "answer": "Nous avons des objectifs différents au travail car elle aime un autre domaine, mais nous nous aidons beaucoup et nous voulons une vie stable ensemble ici."
+      },
+      {
+        "questions": [
+          "Vous avez pensé à vivre au Québec ?"
+        ],
+        "answer": "Oui, j’ai déjà pensé à vivre au Québec, parce que cela me permettrait de parler français tous les jours et de découvrir une autre culture."
+      },
+      {
+        "questions": [
+          "Pourquoi pas le Québec ?"
+        ],
+        "answer": "Pourquoi pas à l’avenir ! Pour l’instant, je suis concentré sur mon travail ici, mais je suis ouvert à l’idée de découvrir le Québec plus tard."
+      },
+      {
+        "questions": [
+          "Vous voulez acheter un appartement plus tard ?",
+          "Où aimeriez-vous acheter un appartement ?",
+          "Est-ce que vous voulez acheter ou louer votre logement plus tard ?"
+        ],
+        "answer": "Pour l’instant je loue, mais plus tard, j’aimerais bien acheter un appartement dans un quartier calme et proche des transports."
+      },
+      {
+        "questions": [
+          "Comment sera votre maison ?",
+          "Vous voulez un grand appartement ou un petit appartement ?"
+        ],
+        "answer": "J’aimerais un appartement de taille moyenne, lumineux et confortable, avec un petit balcon pour profiter de l’extérieur."
+      },
+      {
+        "questions": [
+          "Quels sont vos projets après les études ?"
+        ],
+        "answer": "Après mes études, j’aimerais trouver un bon poste dans le domaine de la vente et du service client pour gagner en expérience et évoluer professionnellement."
+      },
+      {
+        "questions": [
+          "Et après avoir obtenu la résidence permanente ?",
+          "Qu'est-ce que la résidence permanente va changer pour vous ?",
+          "Qu'est-ce que vous aimeriez faire après avoir obtenu la résidence permanente ?"
+        ],
+        "answer": "Avec la résidence permanente, j’aurai plus de stabilité pour planifier l’avenir, évoluer sereinement dans mon travail et peut-être acheter un appartement plus tard."
+      },
+      {
+        "questions": [
+          "Si vous pouviez changer une chose dans votre vie, ce serait quoi ?"
+        ],
+        "answer": "Globalement, je suis très content de ma vie, mais j’aimerais avoir un peu plus de temps libre pour voyager et découvrir de nouveaux endroits."
+      }
+    ],
+    "vocabulary": [
+      { "term": "Évoluer", "definition": "To grow / progress / advance" },
+      { "term": "Prendre des responsabilités", "definition": "To take on responsibilities" },
+      { "term": "Le domaine de", "definition": "The field of / area of" },
+      { "term": "Le service client", "definition": "Customer service" },
+      { "term": "Améliorer", "definition": "To improve" },
+      { "term": "Mieux communiquer", "definition": "To communicate better" },
+      { "term": "Compter (+ infinitif)", "definition": "To intend / plan to (do something)" },
+      { "term": "Au moins", "definition": "At least" },
+      { "term": "Quelques années", "definition": "A few years" },
+      { "term": "Profiter de", "definition": "To enjoy / make the most of" },
+      { "term": "La qualité de vie", "definition": "Quality of life" },
+      { "term": "Actuelle", "definition": "Current" },
+      { "term": "À l’avenir", "definition": "In the future" },
+      { "term": "Découvrir", "definition": "To discover / explore" },
+      { "term": "Des opportunités professionnelles", "definition": "Career / professional opportunities" },
+      { "term": "Cela me permettrait de", "definition": "That would allow me to" },
+      { "term": "Tous les jours", "definition": "Every day" },
+      { "term": "Le parcours professionnel", "definition": "Career path / professional background" },
+      { "term": "Vers un poste de", "definition": "Toward a position as" },
+      { "term": "Responsable d’équipe", "definition": "Team leader / supervisor" },
+      { "term": "Le contact avec les gens", "definition": "Interaction / contact with people" },
+      { "term": "S’installer définitivement", "definition": "To settle permanently" },
+      { "term": "Un bon équilibre", "definition": "A good balance" },
+      { "term": "Dans cinq ans", "definition": "In five years" },
+      { "term": "Je m’imagine", "definition": "I picture myself / I imagine myself" },
+      { "term": "Un poste à responsabilités", "definition": "A management / senior position" },
+      { "term": "Parlant couramment", "definition": "Speaking fluently" },
+      { "term": "Stable et équilibrée", "definition": "Stable and balanced" },
+      { "term": "Calme", "definition": "Quiet / peaceful" },
+      { "term": "Un environnement agréable", "definition": "A pleasant environment" },
+      { "term": "Se sentir bien", "definition": "To feel comfortable / good" },
+      { "term": "Un jour", "definition": "Someday / one day" },
+      { "term": "Pour l’instant", "definition": "For now / at the moment" },
+      { "term": "Rester", "definition": "To stay" },
+      { "term": "Certainement", "definition": "Certainly / definitely" },
+      { "term": "De temps en temps", "definition": "From time to time / occasionally" },
+      { "term": "Rendre visite à", "definition": "To visit (a person)" },
+      { "term": "Des objectifs différents", "definition": "Different goals" },
+      { "term": "S’entraider / s’aider", "definition": "To help each other" },
+      { "term": "Ensemble", "definition": "Together" },
+      { "term": "Déjà", "definition": "Already" },
+      { "term": "Pourquoi pas", "definition": "Why not" },
+      { "term": "Être concentré sur", "definition": "To be focused on" },
+      { "term": "Être ouvert à l’idée de", "definition": "To be open to the idea of" },
+      { "term": "Plus tard", "definition": "Later on" },
+      { "term": "Louer", "definition": "To rent" },
+      { "term": "Un quartier calme", "definition": "A quiet neighborhood" },
+      { "term": "Proche des transports", "definition": "Close to public transit / transportation" },
+      { "term": "De taille moyenne", "definition": "Medium-sized" },
+      { "term": "Lumineux", "definition": "Bright / full of natural light" },
+      { "term": "Confortable", "definition": "Comfortable" },
+      { "term": "L’extérieur", "definition": "The outdoors / outside" },
+      { "term": "Après mes études", "definition": "After my studies" },
+      { "term": "Gagner en expérience", "definition": "To gain experience" },
+      { "term": "La résidence permanente", "definition": "Permanent residency" },
+      { "term": "Planifier l’avenir", "definition": "To plan for the future" },
+      { "term": "Sereinement", "definition": "Calmly / peacefully / with peace of mind" },
+      { "term": "Peut-être", "definition": "Maybe / perhaps" },
+      { "term": "Globalement", "definition": "Overall / generally" },
+      { "term": "Du temps libre", "definition": "Free time" },
+      { "term": "De nouveaux endroits", "definition": "New places" }
+    ]
+  }
+]
