@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Speaking – TCF Practice</title>
+  <title>TCF Speaking</title>
   <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
@@ -12,16 +12,11 @@
   <div class="nav-overlay" id="nav-overlay" onclick="toggleMenu()"></div>
   <nav class="nav-drawer" id="nav-drawer">
     <div class="nav-drawer-header">
-      <span class="nav-drawer-title">French Practice</span>
+      <span class="nav-drawer-title">TCF Speaking</span>
       <button class="close-menu-btn" onclick="toggleMenu()">✕</button>
     </div>
     <ul class="nav-links">
-      <li><a href="index.html" class="nav-link">📖 Home (Reading)</a></li>
-      <li><a href="listening.html" class="nav-link">🎧 Listening</a></li>
-      <li><a href="speaking.html" class="nav-link active">🗣️ Speaking</a></li>
-      <li><a href="writing.html" class="nav-link">✍️ Writing</a></li>
-      <li><a href="tcf-questions.html" class="nav-link">🎯 TCF Questions</a></li>
-      <li><a href="daily-questions.html" class="nav-link">📅 Daily Questions</a></li>
+      <li><a href="index.html" class="nav-link active">🗣️ Home (Task 1)</a></li>
     </ul>
   </nav>
 
@@ -61,7 +56,6 @@
         <div class="card-header">
           <span class="badge">Speaking Q&A</span>
           <div class="card-header-actions">
-            <button class="speed-trigger" id="speed-btn" onclick="cycleSpeed()" title="Speech speed">1x</button>
             <button class="flip-trigger" onclick="flipCard()">Flip to Vocab ↻</button>
           </div>
         </div>
@@ -99,10 +93,8 @@
       const savedTheme = localStorage.getItem('tcf_theme');
       if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
-        themeToggleBtn.textContent = '☀️';
-      } else {
-        themeToggleBtn.textContent = '☀️';
       }
+      themeToggleBtn.textContent = '☀️';
     }
 
     function toggleTheme() {
@@ -136,59 +128,6 @@
     const topicList = document.getElementById('topic-list');
     const topicSearch = document.getElementById('topic-search');
 
-    /* --- French Text-to-Speech --- */
-    let speechRates = [1.0, 0.85, 1.15];
-    let rateIndex = 0;
-    let activePlayBtn = null;
-
-    function cycleSpeed() {
-      rateIndex = (rateIndex + 1) % speechRates.length;
-      document.getElementById('speed-btn').textContent = `${speechRates[rateIndex]}x`;
-    }
-
-    function stopSpeech() {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
-      if (activePlayBtn) {
-        activePlayBtn.classList.remove('is-playing');
-        activePlayBtn.innerHTML = '🔊 Écouter';
-        activePlayBtn = null;
-      }
-    }
-
-    function speakText(btn, text) {
-      if (!('speechSynthesis' in window)) return;
-
-      if (activePlayBtn === btn) {
-        stopSpeech();
-        return;
-      }
-
-      stopSpeech();
-
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'fr-CA';
-      utterance.rate = speechRates[rateIndex];
-
-      const voices = window.speechSynthesis.getVoices();
-      const frVoice = voices.find(v => v.lang.startsWith('fr-CA')) || voices.find(v => v.lang.startsWith('fr'));
-      if (frVoice) utterance.voice = frVoice;
-
-      activePlayBtn = btn;
-      btn.classList.add('is-playing');
-      btn.innerHTML = '⏹ Stop';
-
-      utterance.onend = () => stopSpeech();
-      utterance.onerror = () => stopSpeech();
-
-      window.speechSynthesis.speak(utterance);
-    }
-
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
-    }
-
     async function loadCards() {
       try {
         const response = await fetch(`speaking-data.json?t=${new Date().getTime()}`);
@@ -206,7 +145,6 @@
     function renderCard() {
       if (flashcards.length === 0) return;
 
-      stopSpeech();
       cardElement.classList.remove('is-flipped');
 
       setTimeout(() => {
@@ -221,7 +159,6 @@
             const questionsHTML = entry.questions
               .map(q => `<div class="qa-question-line">• ${q}</div>`)
               .join('');
-            const safeText = entry.answer.replace(/"/g, '&quot;');
 
             return `
               <div class="qa-block">
@@ -231,7 +168,6 @@
                 </div>
                 <div class="qa-answer-wrap">
                   <p class="qa-answer">${entry.answer}</p>
-                  <button class="play-trigger qa-audio-btn" data-text="${safeText}" onclick="speakText(this, this.dataset.text)">🔊 Écouter</button>
                 </div>
               </div>
             `;
@@ -322,7 +258,6 @@
 
     function flipCard() {
       closeTopicPopover();
-      stopSpeech();
       cardElement.classList.toggle('is-flipped');
     }
 
